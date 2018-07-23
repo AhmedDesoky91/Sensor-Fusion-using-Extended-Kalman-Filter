@@ -132,10 +132,20 @@ if (!is_initialized_) {
 #### Compute elapsed time `dt`
 #### Use `dt` to compute EKF new state transition matrix `F` and process noise covariance matrix `Q`
 Our model assumes velocity is constant between time intervals  but in reality we know that an object's velocity can change due to acceleration.The model includes this uncertainty via the process noise. This random acceleration vector is described by a Gaussian distribution with zero mean and covariance matrix `Q`
+
+
 This will conclude with the state transition matrix `F` is
+
+
 ![f_matrix](https://i.imgur.com/r6It7G9.png) 
+
+
 The process noise covariance matrix `Q` is
+
+
 ![q_matrix](https://i.imgur.com/4Q8mldT.png)
+
+
 
 The following code implements the both matrices with `dt`:
 ```cpp
